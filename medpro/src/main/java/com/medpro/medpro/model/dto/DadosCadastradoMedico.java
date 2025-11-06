@@ -10,6 +10,7 @@ import jakarta.validation.constraints.Pattern;
 public record DadosCadastradoMedico(
         @NotBlank String nome,
         @NotBlank String email,
+        @NotBlank String telefone,
         @NotBlank @Pattern(regexp = "\\d{4,6}") String crm,
         @NotNull Especialidade especialidade,
         @NotNull @Valid DadosEndereco endereco) {
