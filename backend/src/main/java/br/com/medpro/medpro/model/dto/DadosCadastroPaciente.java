@@ -1,13 +1,13 @@
 package br.com.medpro.medpro.model.dto;
 
-import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
-public record DadosCadastroPaciente(String nome,
-        @NotBlank String email,
-        @NotBlank String telefone,
-        @NotBlank @Pattern(regexp = "\\d{4,6}") String CPF,
-        @NotBlank @Valid DadosEndereco endereco) {
-
+public record DadosCadastroPaciente(
+    @NotBlank String nome, 
+    @NotBlank String email,
+    @NotBlank String telefone,
+    @NotBlank @Pattern(regexp = "\\d{11}") String cpf, 
+    @NotNull DadosEndereco endereco) {
 }

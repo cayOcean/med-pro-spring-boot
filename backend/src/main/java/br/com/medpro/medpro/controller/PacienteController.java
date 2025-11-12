@@ -18,18 +18,19 @@ import jakarta.transaction.Transactional;
 @RestController
 @RequestMapping("pacientes")
 public class PacienteController {
-
+    
+    
     @Autowired
     private PacienteRepository pacienteRepository;
 
     @PostMapping
     @Transactional
-    public void cadastrar(@RequestBody DadosCadastroPaciente dados) {
-        pacienteRepository.save(new Paciente(dados));
+    public void cadastrar(@RequestBody DadosCadastroPaciente dados){
+       pacienteRepository.save(new Paciente(dados));
     }
 
     @GetMapping
-    public Page<DadosListagemPaciente> listar(Pageable paginacao) {
+    public Page<DadosListagemPaciente> listar(Pageable paginacao){
         return pacienteRepository.findAll(paginacao).map(DadosListagemPaciente::new);
     }
 }
