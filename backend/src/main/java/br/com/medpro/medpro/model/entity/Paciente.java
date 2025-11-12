@@ -1,6 +1,5 @@
 package br.com.medpro.medpro.model.entity;
 
-import br.com.medpro.medpro.model.dto.DadosCadastroMedico;
 import br.com.medpro.medpro.model.dto.DadosCadastroPaciente;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
